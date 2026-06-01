@@ -37,13 +37,13 @@ $$
 Where $V_0$ is the total portfolio value (\$10,000,000).
 
 - **Value at Risk** ($\text{VaR}_\alpha$): The negative of the $(1-\alpha)$-quantile of the portfolio P&L distribution:
-  $$
-  \text{VaR}_\alpha = -\text{Percentile}(\{\text{PnL}_t\}, (1-\alpha) \times 100)
-  $$
+$$
+\text{VaR}_\alpha = -\text{Percentile}(\{\text{PnL}_t\}, (1-\alpha) \times 100)
+$$
 - **Expected Shortfall** ($\text{ES}_\alpha$): The average loss given that the loss exceeds the $\text{VaR}_\alpha$ threshold:
-  $$
-  \text{ES}_\alpha = -E[\text{PnL}_t \mid \text{PnL}_t \le -\text{VaR}_\alpha]
-  $$
+$$
+\text{ES}_\alpha = -E[\text{PnL}_t \mid \text{PnL}_t \le -\text{VaR}_\alpha]
+$$
 
 ---
 
@@ -60,13 +60,13 @@ $$
 Where $\mathbf{w}$ is the vector of asset weights and $\mathbf{\Sigma}$ is the covariance matrix.
 
 - **Value at Risk** ($\text{VaR}_\alpha$):
-  $$
-  \text{VaR}_\alpha = V_0 \times z_\alpha \times \sigma_p
-  $$
+$$    
+\text{VaR}_\alpha = V_0 \times z_\alpha \times \sigma_p
+$$
 - **Expected Shortfall** ($\text{ES}_\alpha$):
-  $$
-  \text{ES}_\alpha = V_0 \times \sigma_p \times \frac{\phi(z_\alpha)}{1 - \alpha}
-  $$
+$$    
+\text{ES}_\alpha = V_0 \times \sigma_p \times \frac{\phi(z_\alpha)}{1 - \alpha}
+$$
 
 Where $z_\alpha = \Phi^{-1}(\alpha)$ is the inverse cumulative distribution function (CDF) of the standard normal distribution, and $\phi(x)$ is the standard normal probability density function (PDF).
 
@@ -92,7 +92,7 @@ $$
 \mathbf{\Sigma}_t = \mathbf{D}_t \mathbf{R} \mathbf{D}_t
 $$
 
-Where $\mathbf{D}_t = \text{diag}(\sigma_{1,t}, \dots, \sigma_{n,t})$ is the diagonal matrix of dynamic standard deviations.
+Where $\mathbf{D}_t = \text{diag}(\sigma_{1,t}, \dots, \sigma_{n,t})$ is the diagonal matrix of standard deviations.
 
 ---
 
