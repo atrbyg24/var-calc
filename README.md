@@ -6,7 +6,7 @@ The project fetches historical pricing data dynamically via Yahoo Finance, align
 
 ---
 
-## 📊 Portfolio Overview
+## Portfolio Overview
 
 The default portfolio is configured in USD with a total value of **$10,000,000.00**, split across major global equity indices:
 
@@ -21,7 +21,7 @@ All asset prices are converted to USD on a daily basis using contemporaneous exc
 
 ---
 
-## 🧮 Methodologies & Mathematics
+## Methodologies & Mathematics
 
 ### 1. Historical Simulation (Non-Parametric)
 Historical Simulation makes no assumptions about the distribution of asset returns. It computes the portfolio's historical P&L distribution using the asset weights:
@@ -70,11 +70,11 @@ $$\sigma_{i,t}^2 = \omega_i + \alpha_i R_{i,t-1}^2 + \beta_i \sigma_{i,t-1}^2$$
 The next-day covariance matrix is then computed by combining the GARCH(1,1) dynamic volatility forecasts with the constant sample correlation matrix $\mathbf{R}$:
 $$\mathbf{\Sigma}_t = \mathbf{D}_t \mathbf{R} \mathbf{D}_t$$
 
-Where $\mathbf{D}_t = \text{diag}(\sigma_{1,t}, \dots, \sigma_{n,t})$ is the diagonal matrix of dynamic standard deviations.
+Where $$\mathbf{D}_t = \text{diag}(\sigma_{1,t}, \dots, \sigma_{n,t})$$ is the diagonal matrix of dynamic standard deviations.
 
 ---
 
-## 🧪 Statistical Backtesting Suite
+## Statistical Backtesting Suite
 
 To validate the model accuracy, the library implements a rolling backtesting system (default: 252-day window) and evaluates exceptions (days where the actual portfolio loss exceeds the predicted 1-day VaR) using standard quantitative diagnostics:
 
@@ -97,13 +97,13 @@ $$LR_{cc} = LR_{POF} + LR_{ind} \sim \chi^2(2)$$
 ### 4. Basel Traffic Light Zones
 In accordance with Basel Accord regulations, models are categorized into three color zones based on the number of exceptions over a 250-day period at the 99% confidence level:
 
-- 🟢 **Green Zone** ($\le 4$ exceptions): Model is considered accurate. Penalty factor = $0.00$.
-- 🟡 **Yellow Zone** ($5$ to $9$ exceptions): Model is monitored. A penalty factor between $0.40$ and $0.85$ is added to the market risk capital multiplier.
-- 🔴 **Red Zone** ($\ge 10$ exceptions): Model is deemed inaccurate. Capital penalty factor = $1.00$ (automatic supervisor intervention).
+- **Green Zone** ($\le 4$ exceptions): Model is considered accurate. Penalty factor = $0.00$.
+- **Yellow Zone** ($5$ to $9$ exceptions): Model is monitored. A penalty factor between $0.40$ and $0.85$ is added to the market risk capital multiplier.
+- **Red Zone** ($\ge 10$ exceptions): Model is deemed inaccurate. Capital penalty factor = $1.00$ (automatic supervisor intervention).
 
 ---
 
-## ⚙️ Installation & Usage
+## Installation & Usage
 
 ### Prerequisites
 - Python 3.9+
@@ -141,7 +141,7 @@ python -m unittest tests/verify_backtesting.py
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 var-calc/
