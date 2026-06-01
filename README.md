@@ -111,7 +111,7 @@ Where $N$ is the number of backtesting observations, $x$ is the number of except
 ### 2. Christoffersen's Independence Test
 Tests whether exceptions are independent over time (i.e. checking for exception clustering). It models the transition of exceptions as a first-order Markov chain:
 $$
-LR_{ind} = -2 \ln \left( \frac{(1-\pi)^{T_{00}+T_{10}} \pi^{T_{01}+T_{11}}}{(1-\pi_{01})^{T_{00}} \pi_{01}^{T_{01}} (1-\pi_{11})^{T_{10}} \pi_{11}^{T_{11}} \right) \sim \chi^2(1)
+LR_{ind} = -2 \ln \left( \frac{(1-\pi)^{T_{00}+T_{10}} \pi^{T_{01}+T_{11}}}{(1-\pi_{01})^{T_{00}} \pi_{01}^{T_{01}} (1-\pi_{11})^{T_{10}} \pi_{11}^{T_{11}}} \right) \sim \chi^2(1)
 $$
 
 Where $T_{ij}$ is the count of transitions from state $i$ to state $j$ ($0$ = no exception, $1$ = exception), $\pi_{01} = \frac{T_{01}}{T_{00}+T_{01}}$, $\pi_{11} = \frac{T_{11}}{T_{10}+T_{11}}$, and $\pi = \frac{T_{01}+T_{11}}{T_{00}+T_{01}+T_{10}+T_{11}}$.
