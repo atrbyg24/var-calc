@@ -12,7 +12,7 @@ PORTFOLIO_POSITIONS = {
 TOTAL_PORTFOLIO_VALUE = sum(PORTFOLIO_POSITIONS.values())
 
 # Confidence Levels for VaR and ES
-CONFIDENCE_LEVELS = [0.95, 0.99]
+CONFIDENCE_LEVELS = [0.95, 0.975, 0.99]
 
 # Number of trading days for historical data
 LOOKBACK_DAYS = 252
