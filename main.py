@@ -43,7 +43,7 @@ def main():
     hist_results = calculate_historical_var_es(latest_returns, CONFIDENCE_LEVELS)
     for cl in CONFIDENCE_LEVELS:
         var, es = hist_results[cl]
-        print(f"Confidence Level {cl*100:.0f}%:")
+        print(f"Confidence Level {cl*100:.2f}%:")
         print(f"  1-Day VaR:  {format_currency(var)} ({format_percentage(var / TOTAL_PORTFOLIO_VALUE)})")
         print(f"  1-Day ES:   {format_currency(es)} ({format_percentage(es / TOTAL_PORTFOLIO_VALUE)})")
         print(f"  10-Day VaR: {format_currency(var * np.sqrt(10))} ({format_percentage((var * np.sqrt(10)) / TOTAL_PORTFOLIO_VALUE)})")
@@ -54,7 +54,7 @@ def main():
     model_results = calculate_model_building_var_es(latest_returns, CONFIDENCE_LEVELS)
     for cl in CONFIDENCE_LEVELS:
         var, es = model_results[cl]
-        print(f"Confidence Level {cl*100:.0f}%:")
+        print(f"Confidence Level {cl*100:.2f}%:")
         print(f"  1-Day VaR:  {format_currency(var)} ({format_percentage(var / TOTAL_PORTFOLIO_VALUE)})")
         print(f"  1-Day ES:   {format_currency(es)} ({format_percentage(es / TOTAL_PORTFOLIO_VALUE)})")
         print(f"  10-Day VaR: {format_currency(var * np.sqrt(10))} ({format_percentage((var * np.sqrt(10)) / TOTAL_PORTFOLIO_VALUE)})")
@@ -66,7 +66,7 @@ def main():
     ewma_results = calculate_model_building_var_es(latest_returns, CONFIDENCE_LEVELS, cov_matrix=ewma_cov)
     for cl in CONFIDENCE_LEVELS:
         var, es = ewma_results[cl]
-        print(f"Confidence Level {cl*100:.0f}%:")
+        print(f"Confidence Level {cl*100:.2f}%:")
         print(f"  1-Day VaR:  {format_currency(var)} ({format_percentage(var / TOTAL_PORTFOLIO_VALUE)})")
         print(f"  1-Day ES:   {format_currency(es)} ({format_percentage(es / TOTAL_PORTFOLIO_VALUE)})")
         print(f"  10-Day VaR: {format_currency(var * np.sqrt(10))} ({format_percentage((var * np.sqrt(10)) / TOTAL_PORTFOLIO_VALUE)})")
@@ -78,7 +78,7 @@ def main():
     garch_results = calculate_model_building_var_es(latest_returns, CONFIDENCE_LEVELS, cov_matrix=garch_cov)
     for cl in CONFIDENCE_LEVELS:
         var, es = garch_results[cl]
-        print(f"Confidence Level {cl*100:.0f}%:")
+        print(f"Confidence Level {cl*100:.2f}%:")
         print(f"  1-Day VaR:  {format_currency(var)} ({format_percentage(var / TOTAL_PORTFOLIO_VALUE)})")
         print(f"  1-Day ES:   {format_currency(es)} ({format_percentage(es / TOTAL_PORTFOLIO_VALUE)})")
         print(f"  10-Day VaR: {format_currency(var * np.sqrt(10))} ({format_percentage((var * np.sqrt(10)) / TOTAL_PORTFOLIO_VALUE)})")
